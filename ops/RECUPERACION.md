@@ -28,7 +28,7 @@ Qué se necesita y en qué orden si la máquina que sirve el sitio se pierde. Lo
 ## C. Certificado caducado o perdido
 La clave privada **no** está en el repo: se reemite. El certificado cubre `wiliamluis.com` y `www.wiliamluis.com`. Si el proxy del borde solo
 reenvía el 443, el reto HTTP-01 no llega y hay que usar **DNS-01**: `certbot certonly --manual --preferred-challenges dns -d wiliamluis.com -d www.wiliamluis.com`,
-crear los TXT `_acme-challenge` que pida (ver `ops/dns.md`), esperar a que propaguen (`dig`) y continuar. Tras emitir o renovar,
+crear los TXT que pida, **cada uno en su nombre**: `_acme-challenge` para el apex y `_acme-challenge.www` para `www` (ver `ops/dns.md`), esperar a que propaguen (`dig`) y continuar. Tras emitir o renovar,
 **recargar Apache** (`reload`). Con DNS-01 manual la renovación (~cada 90 días) es manual: ponte un aviso.
 
 ## Comprobación

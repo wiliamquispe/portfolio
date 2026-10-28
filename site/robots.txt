@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://wiliamluis.com/sitemap.xml

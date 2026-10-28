@@ -1,34 +1,23 @@
-/* tokens.css — dirección «The quiet instrument» (navy sobre blanco). Sólo variables. */
+/* tokens.css — dirección «La cara primero» (v2: crema/arena/cielo/sol/navy + mandarina).
+   Sólo variables. Valores fijados en plan/10-calidez-la-cara-primero.md (bloque 3.1):
+   no cambiarlos sin avisar a gera. */
 :root {
-  --bg: #ffffff;
-  --surface: #f4f4f2;
-  --ink: #1f2b4d;
-  --muted: #5d6479;           /* contraste >= 4.5:1 sobre --bg */
-  --accent: #f7941d;          /* un solo elemento por pantalla */
-  --accent-ink: #1f2b4d;
-  --field-1: #05070a;  --field-1-ink: #ffffff;
-  --field-2: #e3e1dc;  --field-2-ink: #1f2b4d;
-
-  --font: 'STIX Two Text', 'Iowan Old Style', 'Palatino Linotype', Georgia, 'Times New Roman', serif;
-
-  /* cinco pasos de tipo, no más */
-  --step-small: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);   /* 13-14 */
-  --step-body: clamp(1.125rem, 1.05rem + 0.3vw, 1.3125rem);    /* 18-21 */
-  --step-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);       /* 20-26 */
-  --step-head: clamp(2rem, 1.3rem + 3.2vw, 4rem);              /* 32-64 */
-  
-  --margin: clamp(1.25rem, 2.2vw, 2rem);   /* margen lateral único */
-  --gutter: clamp(1rem, 2vw, 1.5rem);
-  --section: clamp(7.5rem, 10vw, 10rem);   /* 120-160 px entre secciones */
-  --col: 560px;                            /* ancho de la columna */
-  --col-left: 22vw;                        /* borde izquierdo de la columna en escritorio */
-  --radius: 0px;                           /* un solo radio; las fotos redondas usan 50% */
-
-  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
-  --t-press: 140ms;
-  --t-hover: 180ms;
-  --t-reveal: 800ms;
-  --t-fade: 1600ms;
-  --stagger: 70ms;
+  --bg: #fffaf2;   --sand: #f6ecdc;  --sky: #d6eefb;  --sun: #ffe39a;  --navy: #1b2550;
+  --surface: var(--sand);
+  --ink: #1b2550;  --muted: #505577;
+  --accent: #ff8a1f;  --accent-ink: #1b2550;
+  --field-dark: #1b2550;  --field-dark-ink: #fffaf2;
+  --font-display: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+  --font: 'Figtree', 'Segoe UI', system-ui, sans-serif;
+  --step-small: clamp(0.875rem, 0.85rem + 0.1vw, 0.9375rem);   /* 14-15 */
+  --step-body:  clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);    /* 17-19 */
+  --step-lead:  clamp(1.3125rem, 1.15rem + 0.7vw, 1.625rem);   /* 21-26 */
+  --step-head:  clamp(2rem, 1.5rem + 1.6vw, 3rem);              /* 32-48 */
+  --step-display: clamp(2.5rem, 1.3rem + 4vw, 4.5rem);         /* 40-72, solo h1 y frase de contacto */
+  --margin: clamp(1.25rem, 3vw, 2.5rem);  --gutter: clamp(1rem, 2vw, 1.5rem);
+  --section: clamp(6rem, 9vw, 10rem);
+  --read: 56ch;  --radius: 20px;  --radius-lg: 24px;  --pill: 999px;
+  --split: 42%;                                    /* ancho de la columna fija */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --t-press: 140ms;  --t-hover: 200ms;  --t-reveal: 500ms;  --stagger: 70ms;
 }

@@ -30,6 +30,7 @@
     var open = nav.classList.toggle('is-open');
     mb.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
+  if (mb && nav) nav.addEventListener('click', function (e) { if (e.target.closest('a')) { nav.classList.remove('is-open'); mb.setAttribute('aria-expanded', 'false'); } });
 
   /* ----- hero: fundido lento entre fotos (pausa con pestaña oculta y con reduce-motion) ----- */
   var imgs = Array.prototype.slice.call(document.querySelectorAll('.hero__photos img'));

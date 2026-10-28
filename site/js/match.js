@@ -8,6 +8,7 @@
   var termsBox = document.getElementById('match-terms');
   var items = Array.prototype.slice.call(document.querySelectorAll('#skills-list li[data-alias]'));
   var lang = function () { return document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'es'; };
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function norm(s) {
     return ' ' + s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
@@ -21,10 +22,15 @@
   function run() {
     var text = norm(input.value);
     var hits = [];
+    var k = 0;                       /* escalonado del acierto: 30 ms, máx. 12 (bloque 6.4) */
     terms.forEach(function (t) {
       var ok = text.length > 2 && t.aliases.some(function (a) { return text.indexOf(a) !== -1; });
       t.li.classList.toggle('is-hit', ok);
-      if (ok) hits.push(t.name);
+      if (ok) {
+        hits.push(t.name);
+        if (!reduce && k < 12) { t.li.style.setProperty('--i', k); k++; }
+        else { t.li.style.removeProperty('--i'); }
+      } else { t.li.style.removeProperty('--i'); }
     });
     var l = lang();
     if (!input.value.trim()) {
@@ -33,10 +39,17 @@
       return;
     }
     out.textContent = hits.length
-      ? (l === 'en' ? hits.length + ' of ' + terms.length + ' terms match' : hits.length + ' de ' + terms.length + ' términos coinciden')
-      : (l === 'en' ? 'No listed term appears in that text.' : 'Ningún término de la lista aparece en ese texto.');
+      ? (l === 'en'
+        ? hits.length + (hits.length === 1 ? ' match with your role' : ' matches with your role')
+        : hits.length + (hits.length === 1 ? ' coincidencia con tu oferta' : ' coincidencias con tu oferta'))
+      : (l === 'en' ? 'No direct match; write to me and we’ll talk.' : 'Ninguna coincidencia directa; escríbeme y lo vemos.');
     termsBox.textContent = '';
-    hits.forEach(function (h) { var s = document.createElement('span'); s.textContent = h; termsBox.appendChild(s); });
+    hits.forEach(function (h, i) {
+      var s = document.createElement('span');
+      s.textContent = h;
+      if (!reduce && i < 12) s.style.setProperty('--i', i);
+      termsBox.appendChild(s);
+    });
   }
   form.addEventListener('submit', function (e) { e.preventDefault(); run(); });
   var clear = document.getElementById('match-clear');

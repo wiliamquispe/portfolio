@@ -3,7 +3,7 @@
 # No toca el DNS ni el proxy del borde: al final imprime lo que falta hacer a mano.
 #
 # Variables obligatorias:  APP_DIR (carpeta destino)  APP_PORT (puerto local libre)  SERVICE_USER (usuario que corre el auto-pull)
-# Opcionales:              REPO_URL, DOMAIN, CHECK=1 (solo muestra lo que haría)
+# Opcionales:              REPO_URL, DOMAIN, SUDO (comando para elevar privilegios), CHECK=1 (solo muestra lo que haría)
 set -euo pipefail
 
 : "${APP_DIR:?define APP_DIR (carpeta donde vivirá el checkout)}"
@@ -12,6 +12,7 @@ set -euo pipefail
 REPO_URL="${REPO_URL:-https://github.com/wiliamquispe/portfolio.git}"
 DOMAIN="${DOMAIN:-wiliamluis.com}"
 CHECK="${CHECK:-0}"
+SUDO="${SUDO:-sudo}"   # comando para elevar privilegios (sudo por defecto)
 
 run() { if [ "$CHECK" = 1 ]; then echo "[check] $*"; else "$@"; fi; }
 need() { command -v "$1" >/dev/null 2>&1 || { echo "falta '$1'" >&2; exit 1; }; }
@@ -26,8 +27,8 @@ fi
 
 echo "== 1. Código en ${APP_DIR}"
 if [ -d "${APP_DIR}/.git" ]; then run git -C "$APP_DIR" pull --ff-only
-else run sudo mkdir -p "$APP_DIR"; run sudo chown "${SERVICE_USER}:" "$APP_DIR"; run sudo -u "$SERVICE_USER" git clone "$REPO_URL" "$APP_DIR"; fi
-[ "$CHECK" = 1 ] || printf 'APP_PORT=%s\n' "$APP_PORT" | sudo -u "$SERVICE_USER" tee "${APP_DIR}/.env" >/dev/null
+else run $SUDO mkdir -p "$APP_DIR"; run $SUDO chown "${SERVICE_USER}:" "$APP_DIR"; run $SUDO -u "$SERVICE_USER" git clone "$REPO_URL" "$APP_DIR"; fi
+[ "$CHECK" = 1 ] || $SUDO -u "$SERVICE_USER" env APP_DIR="$APP_DIR" APP_PORT="$APP_PORT" sh -c 'printf "APP_PORT=%s\n" "$APP_PORT" > "$APP_DIR/.env"'
 
 echo "== 2. Contenedor"
 run docker compose -f "${APP_DIR}/docker-compose.yml" --project-directory "$APP_DIR" up -d
@@ -42,19 +43,19 @@ render() { sed "s|__APP_DIR__|${APP_DIR}|g; s|__PORT__|${APP_PORT}|g; s|__SERVIC
 echo "== 3. Auto-pull (systemd)"
 if [ "$CHECK" != 1 ]; then
   for f in portfolio-autopull.sh portfolio-autopull.service portfolio-autopull.timer; do render "${APP_DIR}/ops/${f}" "${tmp}/${f}"; done
-  sudo install -m 755 "${tmp}/portfolio-autopull.sh" /usr/local/sbin/portfolio-autopull.sh
-  sudo install -m 644 "${tmp}/portfolio-autopull.service" "${tmp}/portfolio-autopull.timer" /etc/systemd/system/
-  sudo systemctl daemon-reload; sudo systemctl enable --now portfolio-autopull.timer
+  $SUDO install -m 755 "${tmp}/portfolio-autopull.sh" /usr/local/sbin/portfolio-autopull.sh
+  $SUDO install -m 644 "${tmp}/portfolio-autopull.service" "${tmp}/portfolio-autopull.timer" /etc/systemd/system/
+  $SUDO systemctl daemon-reload; $SUDO systemctl enable --now portfolio-autopull.timer
 else echo "[check] instalaría portfolio-autopull.{sh,service,timer}"; fi
 
 echo "== 4. Apache"
 if [ "$CHECK" != 1 ]; then
   for f in "${DOMAIN}.conf" "${DOMAIN}-ssl.conf"; do render "${APP_DIR}/ops/apache/${f}" "${tmp}/${f}"; done
-  sudo install -m 644 "${tmp}/${DOMAIN}.conf" "/etc/apache2/sites-available/${DOMAIN}.conf"; sudo a2ensite "${DOMAIN}" >/dev/null
-  if [ -d "/etc/letsencrypt/live/${DOMAIN}" ]; then
-    sudo install -m 644 "${tmp}/${DOMAIN}-ssl.conf" "/etc/apache2/sites-available/${DOMAIN}-ssl.conf"; sudo a2ensite "${DOMAIN}-ssl" >/dev/null
+  $SUDO install -m 644 "${tmp}/${DOMAIN}.conf" "/etc/apache2/sites-available/${DOMAIN}.conf"; $SUDO a2ensite "${DOMAIN}" >/dev/null
+  if $SUDO test -d "/etc/letsencrypt/live/${DOMAIN}"; then
+    $SUDO install -m 644 "${tmp}/${DOMAIN}-ssl.conf" "/etc/apache2/sites-available/${DOMAIN}-ssl.conf"; $SUDO a2ensite "${DOMAIN}-ssl" >/dev/null
   else echo "AVISO: no hay certificado para ${DOMAIN}; se instala solo el vhost :80 (ver RECUPERACION.md, 'Certificado')."; fi
-  sudo apache2ctl configtest && sudo systemctl reload apache2
+  $SUDO apache2ctl configtest && $SUDO systemctl reload apache2
 else echo "[check] instalaría los vhosts de ${DOMAIN} y haría reload de Apache"; fi
 
 cat <<MSG

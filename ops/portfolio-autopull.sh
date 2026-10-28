@@ -17,8 +17,9 @@ CH=$(G diff --name-only "$L" "$R")
 G merge --ff-only -q origin/main || { log "ERROR merge"; exit 1; }
 log "actualizado $(echo "$L" | cut -c1-7) -> $(echo "$R" | cut -c1-7): $(echo "$CH" | tr '\n' ' ')"
 
-# site/ es un montaje de solo lectura (sin reinicio); si cambian compose o nginx.conf hay que recrear el contenedor
-if grep -qxE 'docker-compose.yml|ops/nginx.conf' <<<"$CH"; then docker compose -f "$D/docker-compose.yml" up -d; fi
+# site/ es un montaje de solo lectura (sin reinicio); si cambia el compose se recrea el contenedor y si cambia nginx.conf se recarga
+grep -qx 'docker-compose.yml' <<<"$CH" && docker compose -f "$D/docker-compose.yml" up -d
+grep -qx 'ops/nginx.conf' <<<"$CH" && docker compose -f "$D/docker-compose.yml" exec -T web nginx -s reload
 code=$(curl -sk -o /dev/null -w '%{http_code}' http://127.0.0.1:__PORT__/)
 log "verificacion HTTP=$code"
 [ "$code" = 200 ] || exit 1

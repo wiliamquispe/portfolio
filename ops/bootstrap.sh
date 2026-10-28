@@ -32,7 +32,7 @@ else run $SUDO mkdir -p "$APP_DIR"; run $SUDO chown "${SERVICE_USER}:" "$APP_DIR
 
 echo "== 2. Contenedor"
 run docker compose -f "${APP_DIR}/docker-compose.yml" --project-directory "$APP_DIR" up -d
-# si solo cambió nginx.conf (montaje), recargar sin recrear
+# si solo cambió la config de nginx (carpeta montada), recargar sin recrear
 [ "$CHECK" = 1 ] || docker compose -f "${APP_DIR}/docker-compose.yml" --project-directory "$APP_DIR" exec -T web nginx -s reload </dev/null >/dev/null 2>&1 || true
 if [ "$CHECK" != 1 ]; then
   sleep 2; code=$(curl -s -o /dev/null -w '%{http_code}' "http://127.0.0.1:${APP_PORT}/")

@@ -1,6 +1,6 @@
 # portfolio
 
-Portfolio de **Wiliam Quispe**, AI & Data Engineer en Lima. <https://wiliamluis.com>
+Portfolio de **Wiliam Quispe**, AI & Data Engineer. <https://wiliamluis.com>
 
 Sitio estático y bilingüe (ES/EN), sin cookies, sin analítica y sin scripts de terceros. HTML, CSS y JavaScript propios; tipografía
 STIX Two Text autoalojada (SIL OFL). Una función interactiva, «Compara con tu oferta»: cruza una oferta de trabajo con mis habilidades

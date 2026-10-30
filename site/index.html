@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title data-lang-title data-es="Wiliam Quispe — AI &amp; Data Engineer, Lima" data-en="Wiliam Quispe — AI &amp; Data Engineer, Lima">Wiliam Quispe — AI &amp; Data Engineer, Lima</title>
-  <meta name="description" content="Portafolio de Wiliam Quispe, AI &amp; Data Engineer en Lima, Perú. Python, SQL, ETL, nube e infraestructura de datos. / Portfolio of Wiliam Quispe, AI &amp; Data Engineer in Lima, Peru.">
+  <title data-lang-title data-es="Wiliam Quispe — AI &amp; Data Engineer" data-en="Wiliam Quispe — AI &amp; Data Engineer">Wiliam Quispe — AI &amp; Data Engineer</title>
+  <meta name="description" content="Wiliam Quispe, AI &amp; Data Engineer. Python, SQL, ETL, nube e infraestructura de datos. / Wiliam Quispe, AI &amp; Data Engineer. Python, SQL, ETL, cloud and data infrastructure.">
   <link rel="canonical" href="https://wiliamluis.com/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Wiliam Quispe — AI &amp; Data Engineer">
@@ -27,12 +27,6 @@
   <a class="skip" href="#contenido"><span lang="es">Saltar al contenido</span><span lang="en">Skip to content</span></a>
 
   <div class="stage">
-    <aside class="stage__face">
-      <img src="img/perfil-tall.jpg" width="800" height="1000" alt="Retrato de Wiliam Quispe">
-      <p class="stage__where"><span lang="es">Lima, Perú</span><span lang="en">Lima, Peru</span></p>
-      <p class="stage__status"><span lang="es">Disponible para nuevas oportunidades</span><span lang="en">Open to new opportunities</span></p>
-    </aside>
-
     <div class="stage__read">
       <header class="topbar">
         <a class="topbar__name" href="#inicio">Wiliam Quispe</a>
@@ -40,13 +34,10 @@
           <button class="menu-btn" type="button" data-menu-btn aria-expanded="false" aria-controls="navlinks"><span lang="es">Menú</span><span lang="en">Menu</span></button>
           <nav class="navlinks" id="navlinks" aria-label="Principal">
             <a href="#work"><span lang="es">Trabajo</span><span lang="en">Work</span></a>
-            <a href="#match"><span lang="es">Compara</span><span lang="en">Match</span></a>
             <a href="#studies"><span lang="es">Estudios</span><span lang="en">Studies</span></a>
             <a href="#about"><span lang="es">Sobre mí</span><span lang="en">About</span></a>
           </nav>
           <button class="lang" type="button" data-lang-toggle aria-label="Cambiar idioma / Switch language">EN</button>
-          <a class="btn btn--accent topbar__cv" href="cv/Wiliam-Quispe-CV-ES.pdf" lang="es" target="_blank" rel="noopener noreferrer">Currículum</a>
-          <a class="btn btn--accent topbar__cv" href="cv/Wiliam-Quispe-CV-EN.pdf" lang="en" target="_blank" rel="noopener noreferrer">Résumé</a>
         </div>
       </header>
 
@@ -54,15 +45,36 @@
 
         <!-- ===== HERO ===== -->
         <header class="hero" id="inicio">
-          <h1 class="hero__title reveal">Wiliam Quispe, AI &amp; Data Engineer</h1>
+          <div class="hero__id">
+            <img class="avatar" src="img/perfil-avatar.jpg" width="96" height="96" alt="Retrato de Wiliam Quispe">
+            <p class="stage__status"><span lang="es">Disponible para nuevas oportunidades</span><span lang="en">Open to new opportunities</span></p>
+          </div>
+          <h1 class="hero__title reveal">Wiliam Quispe, <span class="role" aria-label="AI &amp; Data Engineer"><span class="role__fx" aria-hidden="true">AI &amp; Data Engineer</span></span></h1>
           <p class="hero__lede reveal" style="--i:1">
-            <span lang="es">Hola, soy Wiliam, de Lima. Construyo los pipelines y la infraestructura que dejan los datos listos para la IA.</span>
-            <span lang="en">Hi, I’m Wiliam, from Lima. I build the pipelines and infrastructure that get data ready for AI.</span>
+            <span lang="es">Hola, soy Wiliam, construyo pipelines e infraestructura que ayudan a tener datos de calidad. Muy útiles con agentes IA.</span>
+            <span lang="en">Hi, I’m Wiliam, I build pipelines and infrastructure that help deliver quality data. Very useful with AI agents.</span>
           </p>
           <div class="hero__actions reveal" style="--i:2">
-            <a class="btn btn--accent" href="#match"><span lang="es">Compara con tu oferta</span><span lang="en">Match your role</span></a>
-            <a class="btn--text" href="cv/Wiliam-Quispe-CV-ES.pdf" lang="es" target="_blank" rel="noopener noreferrer">Currículum</a>
-            <a class="btn--text" href="cv/Wiliam-Quispe-CV-EN.pdf" lang="en" target="_blank" rel="noopener noreferrer">Résumé</a>
+            <a class="btn btn--accent" href="cv/Wiliam-Quispe-CV-ES.pdf" lang="es" target="_blank" rel="noopener noreferrer">Currículum</a>
+            <a class="btn btn--accent" href="cv/Wiliam-Quispe-CV-EN.pdf" lang="en" target="_blank" rel="noopener noreferrer">Résumé</a>
+          </div>
+
+          <!-- A1 · tubería de datos: dibujo decorativo (el texto va en el h1) -->
+          <div class="pipe" aria-hidden="true">
+            <svg class="pipe__svg" viewBox="0 0 680 96" role="presentation" focusable="false">
+              <path class="pipe__line" d="M60 48H620"/>
+              <g class="pipe__packets">
+                <circle class="pipe__packet" r="3"/>
+                <circle class="pipe__packet pipe__packet--accent" r="3"/>
+                <circle class="pipe__packet" r="3"/>
+              </g>
+              <g class="pipe__nodes">
+                <g class="pipe__node"><rect x="8" y="31" width="104" height="34" rx="17"/><text x="60" y="48" lang="es">Fuente</text><text x="60" y="48" lang="en">Source</text></g>
+                <g class="pipe__node"><rect x="194" y="31" width="104" height="34" rx="17"/><text x="246" y="48">ETL</text></g>
+                <g class="pipe__node"><rect x="381" y="31" width="104" height="34" rx="17"/><text x="433" y="48" lang="es">Modelo</text><text x="433" y="48" lang="en">Model</text></g>
+                <g class="pipe__node"><rect x="568" y="31" width="104" height="34" rx="17"/><text x="620" y="48" lang="es">Servicio</text><text x="620" y="48" lang="en">Service</text></g>
+              </g>
+            </svg>
           </div>
         </header>
 
@@ -140,96 +152,97 @@
           </div>
         </section>
 
-        <!-- ===== COMPARA CON TU OFERTA (la cosa viva) ===== -->
-        <section class="field field--sun match" id="match" aria-labelledby="match-h">
-          <h2 id="match-h" class="reveal"><span lang="es">Compara con tu oferta</span><span lang="en">Match your role</span></h2>
-          <p class="reveal" style="--i:1">
-            <span lang="es">Pega una oferta de trabajo y marco lo que coincide con mi perfil. Todo ocurre en tu navegador: no se envía nada.</span>
-            <span lang="en">Paste a job description and I’ll mark what matches my profile. It all happens in your browser: nothing is sent.</span>
-          </p>
-          <form id="match-form" class="reveal" style="--i:2" novalidate>
-            <label class="sr-only" for="match-input"><span lang="es">Texto de la oferta</span><span lang="en">Job description</span></label>
-            <textarea id="match-input" name="oferta" rows="6" autocomplete="off" spellcheck="false"></textarea>
-            <div class="match__bar">
-              <button class="btn btn--accent" type="submit"><span lang="es">Comparar</span><span lang="en">Compare</span></button>
-              <button class="btn--text" type="button" id="match-clear"><span lang="es">Borrar</span><span lang="en">Clear</span></button>
+        <!-- ===== HERRAMIENTAS (y «Compara», como extra) ===== -->
+        <section class="field field--sand" id="skills" aria-labelledby="skills-h">
+          <h2 id="skills-h" class="reveal"><span lang="es">Herramientas</span><span lang="en">Stack</span></h2>
+          <dl class="skills" id="skills-list">
+            <dt><span lang="es">Datos</span><span lang="en">Data</span></dt>
+            <dd><ul class="chips">
+              <li data-alias="python">Python</li>
+              <li data-alias="sql|t-sql|tsql">SQL</li>
+              <li data-alias="etl">ETL</li>
+              <li data-alias="elt">ELT</li>
+              <li data-alias="bash|shell script">Bash</li>
+              <li data-alias="perl">Perl</li>
+              <li data-alias="pyspark|spark|apache spark" data-name="PySpark">PySpark</li>
+              <li data-alias="ssis|integration services">SSIS</li>
+              <li data-alias="sql server|sqlserver" data-name="SQL Server">SQL Server</li>
+              <li data-alias="teradata">Teradata</li>
+              <li data-alias="mysql">MySQL</li>
+              <li data-alias="postgresql|postgres">PostgreSQL</li>
+              <li data-alias="dbt">dbt</li>
+              <li data-alias="pipeline|pipelines|data pipeline">Pipelines</li>
+              <li data-alias="data warehouse|data warehousing|datawarehouse" data-name="Data warehouse">Data warehouse</li>
+              <li data-alias="big data">Big data</li>
+              <li data-alias="data mining|mineria de datos" data-name="Data mining">Data mining</li>
+            </ul></dd>
+            <dt><span lang="es">Nube e infraestructura</span><span lang="en">Cloud and infrastructure</span></dt>
+            <dd><ul class="chips">
+              <li data-alias="azure">Azure</li>
+              <li data-alias="azure data factory|data factory|adf" data-name="Azure Data Factory">Azure Data Factory</li>
+              <li data-alias="azure sql">Azure SQL</li>
+              <li data-alias="aws|amazon web services">AWS</li>
+              <li data-alias="ec2">EC2</li>
+              <li data-alias="google cloud|gcp" data-name="Google Cloud">Google Cloud</li>
+              <li data-alias="docker|contenedor|contenedores|container|containers">Docker</li>
+              <li data-alias="terraform">Terraform</li>
+              <li data-alias="linux">Linux</li>
+              <li data-alias="vpn">VPN</li>
+              <li data-alias="proxy|proxies">Proxy</li>
+              <li data-alias="galera">Galera</li>
+              <li data-alias="replication|replicacion" data-name="Replicación / Replication"><span lang="es">Replicación</span><span lang="en">Replication</span></li>
+              <li data-alias="backup|backups|copias de seguridad" data-name="Backups">Backups</li>
+              <li data-alias="monitoring|monitorizacion|monitoreo" data-name="Monitorización / Monitoring"><span lang="es">Monitorización</span><span lang="en">Monitoring</span></li>
+              <li data-alias="virtualization|virtualizacion|virtualized|virtualizado" data-name="Virtualización / Virtualization"><span lang="es">Virtualización</span><span lang="en">Virtualization</span></li>
+              <li data-alias="orchestration|orquestacion" data-name="Orquestación / Orchestration"><span lang="es">Orquestación</span><span lang="en">Orchestration</span></li>
+              <li data-alias="git|github">Git</li>
+            </ul></dd>
+            <dt><span lang="es">Inteligencia artificial</span><span lang="en">Artificial intelligence</span></dt>
+            <dd><ul class="chips">
+              <li data-alias="machine learning|ml" data-name="Machine learning">Machine learning</li>
+              <li data-alias="deep learning" data-name="Deep learning">Deep learning</li>
+              <li data-alias="artificial intelligence|inteligencia artificial|ia|ai" data-name="IA / AI">IA / AI</li>
+              <li data-alias="tensorflow">TensorFlow</li>
+              <li data-alias="pytorch">PyTorch</li>
+              <li data-alias="opencv">OpenCV</li>
+              <li data-alias="scikit-learn|scikit learn|sklearn" data-name="scikit-learn">scikit-learn</li>
+              <li data-alias="jupyter">Jupyter</li>
+            </ul></dd>
+            <dt><span lang="es">Desarrollo</span><span lang="en">Development</span></dt>
+            <dd><ul class="chips">
+              <li data-alias="flask">Flask</li>
+              <li data-alias="django">Django</li>
+              <li data-alias="node.js|nodejs|node js" data-name="Node.js">Node.js</li>
+              <li data-alias="java">Java</li>
+              <li data-alias="php">PHP</li>
+            </ul></dd>
+          </dl>
+
+          <details class="match" id="match">
+            <summary><span lang="es">¿Quieres comparar una oferta con mi perfil?</span><span lang="en">Want to compare a job description with my profile?</span></summary>
+            <div class="match__body">
+              <p>
+                <span lang="es">Pega una oferta de trabajo y marco lo que coincide con mi perfil. Todo ocurre en tu navegador: no se envía nada.</span>
+                <span lang="en">Paste a job description and I’ll mark what matches my profile. It all happens in your browser: nothing is sent.</span>
+              </p>
+              <form id="match-form" novalidate>
+                <label class="sr-only" for="match-input"><span lang="es">Texto de la oferta</span><span lang="en">Job description</span></label>
+                <textarea id="match-input" name="oferta" rows="6" autocomplete="off" spellcheck="false"></textarea>
+                <div class="match__bar">
+                  <button class="btn btn--dark" type="submit"><span lang="es">Comparar</span><span lang="en">Compare</span></button>
+                  <button class="btn--text" type="button" id="match-clear"><span lang="es">Borrar</span><span lang="en">Clear</span></button>
+                </div>
+                <p class="match__result" id="match-result" role="status" aria-live="polite"></p>
+                <div class="match__terms" id="match-terms"></div>
+              </form>
+              <p class="small muted"><span lang="es">Es una comparación por palabras clave, no un modelo.</span><span lang="en">This is a keyword match, not a model.</span></p>
             </div>
-            <p class="match__result" id="match-result" role="status" aria-live="polite"></p>
-            <div class="match__terms" id="match-terms"></div>
-          </form>
-          <p class="small muted reveal" style="--i:2"><span lang="es">Es una comparación por palabras clave, no un modelo.</span><span lang="en">This is a keyword match, not a model.</span></p>
-          <dl class="skills reveal" id="skills-list" style="--i:3">
-        <dt><span lang="es">Datos</span><span lang="en">Data</span></dt>
-        <dd><ul class="chips">
-          <li data-alias="python">Python</li>
-          <li data-alias="sql|t-sql|tsql">SQL</li>
-          <li data-alias="etl">ETL</li>
-          <li data-alias="elt">ELT</li>
-          <li data-alias="bash|shell script">Bash</li>
-          <li data-alias="perl">Perl</li>
-          <li data-alias="pyspark|spark|apache spark" data-name="PySpark">PySpark</li>
-          <li data-alias="ssis|integration services">SSIS</li>
-          <li data-alias="sql server|sqlserver" data-name="SQL Server">SQL Server</li>
-          <li data-alias="teradata">Teradata</li>
-          <li data-alias="mysql">MySQL</li>
-          <li data-alias="postgresql|postgres">PostgreSQL</li>
-          <li data-alias="dbt">dbt</li>
-          <li data-alias="pipeline|pipelines|data pipeline">Pipelines</li>
-          <li data-alias="data warehouse|data warehousing|datawarehouse" data-name="Data warehouse">Data warehouse</li>
-          <li data-alias="big data">Big data</li>
-          <li data-alias="data mining|mineria de datos" data-name="Data mining">Data mining</li>
-        </ul></dd>
-        <dt><span lang="es">Nube e infraestructura</span><span lang="en">Cloud and infrastructure</span></dt>
-        <dd><ul class="chips">
-          <li data-alias="azure">Azure</li>
-          <li data-alias="azure data factory|data factory|adf" data-name="Azure Data Factory">Azure Data Factory</li>
-          <li data-alias="azure sql">Azure SQL</li>
-          <li data-alias="aws|amazon web services">AWS</li>
-          <li data-alias="ec2">EC2</li>
-          <li data-alias="google cloud|gcp" data-name="Google Cloud">Google Cloud</li>
-          <li data-alias="docker|contenedor|contenedores|container|containers">Docker</li>
-          <li data-alias="terraform">Terraform</li>
-          <li data-alias="linux">Linux</li>
-          <li data-alias="vpn">VPN</li>
-          <li data-alias="proxy|proxies">Proxy</li>
-          <li data-alias="galera">Galera</li>
-          <li data-alias="replication|replicacion" data-name="Replicación / Replication"><span lang="es">Replicación</span><span lang="en">Replication</span></li>
-          <li data-alias="backup|backups|copias de seguridad" data-name="Backups">Backups</li>
-          <li data-alias="monitoring|monitorizacion|monitoreo" data-name="Monitorización / Monitoring"><span lang="es">Monitorización</span><span lang="en">Monitoring</span></li>
-          <li data-alias="virtualization|virtualizacion|virtualized|virtualizado" data-name="Virtualización / Virtualization"><span lang="es">Virtualización</span><span lang="en">Virtualization</span></li>
-          <li data-alias="orchestration|orquestacion" data-name="Orquestación / Orchestration"><span lang="es">Orquestación</span><span lang="en">Orchestration</span></li>
-          <li data-alias="git|github">Git</li>
-        </ul></dd>
-        <dt><span lang="es">Inteligencia artificial</span><span lang="en">Artificial intelligence</span></dt>
-        <dd><ul class="chips">
-          <li data-alias="machine learning|ml" data-name="Machine learning">Machine learning</li>
-          <li data-alias="deep learning" data-name="Deep learning">Deep learning</li>
-          <li data-alias="artificial intelligence|inteligencia artificial|ia|ai" data-name="IA / AI">IA / AI</li>
-          <li data-alias="tensorflow">TensorFlow</li>
-          <li data-alias="pytorch">PyTorch</li>
-          <li data-alias="opencv">OpenCV</li>
-          <li data-alias="scikit-learn|scikit learn|sklearn" data-name="scikit-learn">scikit-learn</li>
-          <li data-alias="jupyter">Jupyter</li>
-        </ul></dd>
-        <dt><span lang="es">Desarrollo</span><span lang="en">Development</span></dt>
-        <dd><ul class="chips">
-          <li data-alias="flask">Flask</li>
-          <li data-alias="django">Django</li>
-          <li data-alias="node.js|nodejs|node js" data-name="Node.js">Node.js</li>
-          <li data-alias="java">Java</li>
-          <li data-alias="php">PHP</li>
-        </ul></dd>
-      </dl>
+          </details>
         </section>
 
         <!-- ===== ESTUDIOS ===== -->
         <section class="field field--sky" id="studies" aria-labelledby="studies-h">
           <h2 id="studies-h" class="reveal"><span lang="es">Estudios</span><span lang="en">Studies</span></h2>
-          <figure class="photo reveal" style="--i:0">
-            <span lang="es"><picture><source type="image/webp" srcset="img/lima-sanmarcos.webp"><img src="img/lima-sanmarcos.jpg" width="1400" height="933" alt="Muro de San Marcos con escudo y el rótulo Universidad del Perú, decana de América" loading="lazy" decoding="async"></picture></span>
-            <span lang="en"><picture><source type="image/webp" srcset="img/lima-sanmarcos.webp"><img src="img/lima-sanmarcos.jpg" width="1400" height="933" alt="San Marcos wall with its coat of arms and the motto Universidad del Perú, decana de América" loading="lazy" decoding="async"></picture></span>
-            <figcaption><span lang="es">San Marcos, decana de América</span><span lang="en">San Marcos, the oldest university in the Americas</span></figcaption>
-          </figure>
 
           <div class="studies">
             <article class="study reveal" style="--i:1">
@@ -266,12 +279,7 @@
         <!-- ===== SOBRE MÍ ===== -->
         <section class="letter" id="about" aria-labelledby="about-h">
           <h2 class="sr-only" id="about-h"><span lang="es">Sobre mí</span><span lang="en">About</span></h2>
-          <figure class="photo reveal" style="--i:0">
-            <span lang="es"><picture><source type="image/webp" srcset="img/lima-plaza.webp"><img src="img/lima-plaza.jpg" width="1600" height="1000" alt="Plaza Mayor de Lima con edificio amarillo de balcones de madera" loading="lazy" decoding="async"></picture></span>
-            <span lang="en"><picture><source type="image/webp" srcset="img/lima-plaza.webp"><img src="img/lima-plaza.jpg" width="1600" height="1000" alt="Main square of Lima with a yellow building and wooden balconies" loading="lazy" decoding="async"></picture></span>
-            <figcaption><span lang="es">Plaza Mayor, centro de Lima</span><span lang="en">Main Square, central Lima</span></figcaption>
-          </figure>
-          <p class="reveal" style="--i:1"><span lang="es">Soy ingeniero de sistemas por la Universidad Nacional Mayor de San Marcos, en Lima, y curso una maestría en inteligencia artificial.</span><span lang="en">I am a systems engineer from Universidad Nacional Mayor de San Marcos, in Lima, and I am studying a master's in artificial intelligence.</span></p>
+          <p class="reveal" style="--i:1"><span lang="es">Soy ingeniero de sistemas por la Universidad Nacional Mayor de San Marcos y curso una maestría en inteligencia artificial.</span><span lang="en">I am a systems engineer from Universidad Nacional Mayor de San Marcos and I am studying a master's in artificial intelligence.</span></p>
           <p class="reveal" style="--i:2"><span lang="es">Empecé en servidores y bases de datos: Linux, máquinas virtuales, VPN, replicación. Ahí aprendí que un proyecto de datos es, sobre todo, la infraestructura que lo mantiene vivo.</span><span lang="en">I started in servers and databases: Linux, virtual machines, VPNs, replication. That is where I learned that a data project is mostly the infrastructure that keeps it alive.</span></p>
           <p class="reveal" style="--i:3"><span lang="es">Hoy construyo pipelines de datos y optimizo bases de datos en un banco, y avanzo hacia el machine learning que corre encima.</span><span lang="en">Today I build data pipelines and optimise databases at a bank, and I am moving toward the machine learning that runs on top of them.</span></p>
           <p class="reveal" style="--i:4"><span lang="es">Fuera del trabajo toco la guitarra y exploro videojuegos.</span><span lang="en">Outside work I play the guitar and explore video games.</span></p>
@@ -280,10 +288,6 @@
 
         <!-- ===== CONTACTO ===== -->
         <section class="field field--navy contact" id="contact" aria-labelledby="contact-h">
-          <figure class="photo reveal">
-            <span lang="es"><picture><source type="image/webp" srcset="img/lima-balcon.webp"><img src="img/lima-balcon.jpg" width="1600" height="900" alt="Fachada con balcón de hierro del antiguo estudio fotográfico Courret, en Lima" loading="lazy" decoding="async"></picture></span>
-            <span lang="en"><picture><source type="image/webp" srcset="img/lima-balcon.webp"><img src="img/lima-balcon.jpg" width="1600" height="900" alt="Façade with an iron balcony of the former Courret photography studio, in Lima" loading="lazy" decoding="async"></picture></span>
-          </figure>
           <h2 id="contact-h" class="contact__title reveal">
             <span lang="es">Escríbeme.</span><span lang="en">Write to me.</span>
           </h2>
@@ -297,7 +301,7 @@
             <a class="btn btn--dark" href="https://github.com/wiliamquispe" target="_blank" rel="noopener noreferrer">GitHub</a>
             <a class="btn btn--dark" href="https://twitter.com/wililucho" target="_blank" rel="noopener noreferrer">X</a>
           </div>
-          <p class="contact__meta reveal" style="--i:3"><span lang="es">Lima, Perú · +51 926 044 465 · wiliam.quispe@unmsm.edu.pe · bilye145@gmail.com</span><span lang="en">Lima, Peru · +51 926 044 465 · wiliam.quispe@unmsm.edu.pe · bilye145@gmail.com</span></p>
+          <p class="contact__meta reveal" style="--i:3"><span lang="es">+51 926 044 465 · wiliam.quispe@unmsm.edu.pe · bilye145@gmail.com</span><span lang="en">+51 926 044 465 · wiliam.quispe@unmsm.edu.pe · bilye145@gmail.com</span></p>
         </section>
       </main>
 
@@ -312,15 +316,12 @@
           <a href="cv/Wiliam-Quispe-CV-EN.pdf" lang="en" target="_blank" rel="noopener noreferrer">Résumé</a>
         </nav>
         <p class="foot__r">© 2026 · <a href="privacidad.html"><span lang="es">Privacidad</span><span lang="en">Privacy</span></a></p>
-        <p class="foot__credits">
-          <span lang="es">Fotos: <a href="https://commons.wikimedia.org/w/index.php?curid=27121105" target="_blank" rel="noopener noreferrer">Avodrocc</a> (CC BY 2.0), <a href="https://commons.wikimedia.org/wiki/File:Mural_de_la_Universidad_Nacional_Mayor_de_San_Marcos,_2024.jpg" target="_blank" rel="noopener noreferrer">Marco Carrasco</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Balcony_-_Lima,_Peru-2.jpg" target="_blank" rel="noopener noreferrer">David Berkowitz</a> (CC BY 2.0), vía <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>.</span>
-          <span lang="en">Photos: <a href="https://commons.wikimedia.org/w/index.php?curid=27121105" target="_blank" rel="noopener noreferrer">Avodrocc</a> (CC BY 2.0), <a href="https://commons.wikimedia.org/wiki/File:Mural_de_la_Universidad_Nacional_Mayor_de_San_Marcos,_2024.jpg" target="_blank" rel="noopener noreferrer">Marco Carrasco</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Balcony_-_Lima,_Peru-2.jpg" target="_blank" rel="noopener noreferrer">David Berkowitz</a> (CC BY 2.0), via <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>.</span>
-        </p>
       </footer>
     </div><!-- /.stage__read -->
   </div><!-- /.stage -->
 
   <script src="js/site.js" defer></script>
   <script src="js/match.js" defer></script>
+  <script src="js/motion.js" defer></script>
 </body>
 </html>

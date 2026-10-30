@@ -17,7 +17,6 @@
   --margin: clamp(1.25rem, 3vw, 2.5rem);  --gutter: clamp(1rem, 2vw, 1.5rem);
   --section: clamp(6rem, 9vw, 10rem);
   --read: 56ch;  --radius: 20px;  --radius-lg: 24px;  --pill: 999px;
-  --split: 42%;                                    /* ancho de la columna fija */
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --t-press: 140ms;  --t-hover: 200ms;  --t-reveal: 500ms;  --stagger: 70ms;
 }

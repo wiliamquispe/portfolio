@@ -15,6 +15,7 @@
   --step-head:  clamp(2rem, 1.5rem + 1.6vw, 3rem);              /* 32-48 */
   --step-display: clamp(2.5rem, 1.3rem + 4vw, 4.5rem);         /* 40-72, solo h1 y frase de contacto */
   --margin: clamp(1.25rem, 3vw, 2.5rem);  --gutter: clamp(1rem, 2vw, 1.5rem);
+  --gap-card: 3rem;                                 /* hueco entre tarjetas: deja sitio a la mascota (plan 12) */
   --section: clamp(6rem, 9vw, 10rem);
   --read: 56ch;  --radius: 20px;  --radius-lg: 24px;  --pill: 999px;
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);

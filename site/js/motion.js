@@ -1,19 +1,9 @@
-/* motion.js — A1 pausa, A2 descifrado, A3 chips, A4 inclinación. Sin dependencias;
+/* motion.js — A2 descifrado, A3 chips, A4 inclinación. Sin dependencias;
    con prefers-reduced-motion no corre y sin JS todo se ve igual. */
 (function () {
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
   var each = function (l, f) { [].forEach.call(l, f); };
-
-  /* A1 · pausa fuera de pantalla y con la pestaña oculta */
-  var pipe = document.querySelector('.pipe');
-  if (pipe) {
-    var pause = function (p) { pipe.classList.toggle('is-paused', p); };
-    if (window.IntersectionObserver) new IntersectionObserver(function (es) {
-      es.forEach(function (e) { pause(!e.isIntersecting); });
-    }, { threshold: 0 }).observe(pipe);
-    document.addEventListener('visibilitychange', function () { pause(document.hidden); });
-  }
 
   /* A2 · descifrado; cada carácter conserva su ancho */
   var fx = document.querySelector('.role__fx');

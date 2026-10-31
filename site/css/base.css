@@ -48,7 +48,7 @@ html[data-lang="en"] [lang="es"], html[data-lang="es"] [lang="en"] { display: no
 .navlinks { display: flex; align-items: center; gap: 1.25rem; }
 .topbar__nav a { text-decoration: none; }
 .topbar__nav a:hover { text-decoration: underline; }
-#inicio, #work, #skills, #match, #studies, #about, #contact { scroll-margin-top: 5.5rem; }
+#inicio, #work, #certs, #skills, #match, #studies, #about, #contact { scroll-margin-top: 5.5rem; }
 .lang { font-size: var(--step-small); font-weight: 600; letter-spacing: 0.02em; padding: 0.5rem 0.25rem; }
 .menu-btn { display: none; font-size: var(--step-small); font-weight: 600; padding: 0.5rem 0; }
 
@@ -72,6 +72,7 @@ html[data-lang="en"] [lang="es"], html[data-lang="es"] [lang="en"] { display: no
 .field > * { max-width: var(--read); }
 .field--sand { background: var(--sand); color: var(--ink); }
 .field--sky { background: var(--sky); color: var(--ink); }
+.field--sun { background: var(--sun); color: var(--ink); }
 .field--navy { background: var(--navy); color: var(--field-dark-ink); }
 .field--navy :focus-visible { outline-color: var(--field-dark-ink); }
 
@@ -81,7 +82,8 @@ html[data-lang="en"] [lang="es"], html[data-lang="es"] [lang="en"] { display: no
 /* ---------- hero ---------- */
 .hero { padding-block: clamp(2rem, 5vw, 4rem) 0; padding-inline: var(--inset); }
 .hero__id { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem); }
-.avatar { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; object-position: 50% 25%; }
+.hero__id picture { display: block; flex: none; }
+.avatar { width: 144px; height: 144px; border-radius: 50%; object-fit: cover; object-position: 50% 50%; }
 .hero__title { font-family: var(--font-display); font-weight: 700; font-size: var(--step-display); line-height: 1.02; letter-spacing: -0.03em; text-wrap: balance; }
 .hero__lede { margin-top: clamp(1rem, 2vw, 1.5rem); font-size: var(--step-lead); line-height: 1.35; max-width: 34ch; }
 .hero__actions { display: flex; align-items: center; flex-wrap: wrap; gap: 0.75rem 1.75rem; margin-top: clamp(1.75rem, 3vw, 2.5rem); }
@@ -96,11 +98,11 @@ html[data-lang="en"] [lang="es"], html[data-lang="es"] [lang="en"] { display: no
 
 /* ---------- trabajo: tarjetas ---------- */
 .jobs { display: grid; gap: var(--gap-card); }
-.ledger__row { position: relative; background: var(--bg); border-radius: var(--radius); padding: 1.5rem; }
-.ledger__year { font-size: var(--step-small); color: var(--muted); }
-.ledger__name { font-family: var(--font-display); font-weight: 600; font-size: var(--step-lead); line-height: 1.2; margin-top: 0.25rem; }
-.ledger__name a { text-decoration: none; }
-.ledger__name a:hover { text-decoration: underline; }
+.ledger__row, .cert { position: relative; background: var(--bg); border-radius: var(--radius); padding: 1.5rem; }
+.ledger__year, .cert__meta { font-size: var(--step-small); color: var(--muted); }
+.ledger__name, .cert__name { font-family: var(--font-display); font-weight: 600; font-size: var(--step-lead); line-height: 1.2; margin-top: 0.25rem; }
+.ledger__name a, .cert__name a { text-decoration: none; }
+.ledger__name a:hover, .cert__name a:hover { text-decoration: underline; }
 .ledger__kind { font-family: var(--font-display); font-weight: 600; font-size: var(--step-body); line-height: 1.3; margin-top: 0.25rem; }
 .ledger__more { margin-top: 0.875rem; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
 .ledger__row.is-open .ledger__more { display: block; }
@@ -111,10 +113,10 @@ html[data-lang="en"] [lang="es"], html[data-lang="es"] [lang="en"] { display: no
 .ledger__row.is-open .ledger__label-less { display: inline; }
 .ledger__row.is-open .ledger__label-more { display: none; }
 @media (hover: hover) and (pointer: fine) {
-  .ledger__row { transition: transform var(--t-hover) var(--ease-out), background-color var(--t-hover) ease; }
-  .ledger__row:hover { transform: translateY(-3px); }
+  .ledger__row, .cert { transition: transform var(--t-hover) var(--ease-out), background-color var(--t-hover) ease; }
+  .ledger__row:hover, .cert:hover { transform: translateY(-3px); }
 }
-.ledger__row:active { transform: scale(0.97); }
+.ledger__row:active, .cert:active { transform: scale(0.97); }
 
 /* ---------- herramientas + «compara» (extra, dentro de un <details>) ---------- */
 .match { margin-top: clamp(2rem, 4vw, 3rem); }
@@ -144,8 +146,12 @@ mark.hit { background: #ffc489; color: var(--ink); }
 .chips li:active { transform: scale(0.97); }
 .chips li.is-hit { background: #ffc489; color: var(--ink); animation: chip-in 220ms var(--ease-out) both; animation-delay: calc(min(var(--i, 12), 12) * 30ms); }
 .chips a { text-decoration: underline; text-decoration-thickness: 1px; }
-.chips--links li { padding: 0.375rem 0.875rem; transition: transform var(--t-press) var(--ease-out), background-color var(--t-hover) ease; }
 .field .small.muted { color: var(--ink); margin-top: 1rem; }
+
+/* ---------- certificaciones (realce como Trabajo) ---------- */
+.certs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap-card); }
+.cert__name { margin-top: 0; }
+@media (max-width: 39.99em) { .certs { grid-template-columns: 1fr; } }
 
 /* ---------- estudios ---------- */
 .studies { display: grid; gap: var(--gap-card); }
@@ -184,12 +190,12 @@ html.js .reveal.is-in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   html.js .reveal { opacity: 1; transform: none; transition: opacity 200ms ease; transition-delay: 0s; }
   html.js .reveal.is-in { opacity: 1; transform: none; }
-  .btn, .btn:active, .btn--text, .btn--text:active, .lang, .menu-btn, .ledger__toggle, .ledger__toggle:active, .chips li, .chips li:active, .chips--links li, .chips--links li:active { transition: opacity 200ms ease, background-color 200ms ease, color 200ms ease; transform: none; }
-  .ledger__row, .ledger__row:hover, .ledger__row:active { transition: opacity 200ms ease, background-color 200ms ease; transform: none; }
+  .btn, .btn:active, .btn--text, .btn--text:active, .lang, .menu-btn, .ledger__toggle, .ledger__toggle:active, .chips li, .chips li:active { transition: opacity 200ms ease, background-color 200ms ease, color 200ms ease; transform: none; }
+  .ledger__row, .ledger__row:hover, .ledger__row:active, .cert, .cert:hover, .cert:active { transition: opacity 200ms ease, background-color 200ms ease; transform: none; }
   .topbar__nav.is-open .navlinks { animation: menu-fade 200ms ease; }
   .match__terms span, .chips li.is-hit { animation: fade-in 200ms ease both; animation-delay: 0s; }
   .match[open] > .match__body { animation: none; }
-  .area, .study, .is-tilting { transition: none !important; }
+  .area, .study, .cert, .is-tilting { transition: none !important; }
 }
 @keyframes menu-fade { from { opacity: 0; } }
 
@@ -211,7 +217,7 @@ html.js .skills.chip-wake.is-awake .chips li { opacity: 1; transition: opacity 3
 
 /* el apagado va al final para ganar a las reglas de arriba */
 @media (prefers-reduced-motion: reduce) {
-  .area, .study, .is-tilting { transition: none !important; }
+  .area, .study, .cert, .is-tilting { transition: none !important; }
 }
 
 /* ---------- mascota (plan 12): reposo, tamaños y luz ---------- */
@@ -228,6 +234,7 @@ div.bot.is-dark { --bot-body: var(--sun); }
 @keyframes bot-blink { 0%, 100% { scale: 1 1; } 50% { scale: 1 0.1; } }
 div.bot.is-paused svg, div.bot.is-paused .bot__plume, div.bot.is-paused .bot__shield, div.bot.is-paused .bot__eyes { animation-play-state: paused; }
 @media (max-width: 39.99em) { div.bot { width: 36px; height: 36px; } }
+@media (max-width: 39.99em) { .avatar { width: 120px; height: 120px; } }
 @media (prefers-reduced-motion: reduce) {
   div.bot svg, .bot__plume, .bot__shield, .bot__eyes { animation: none; }
   .bot__plume { transform: rotate(-5deg); }

@@ -21,7 +21,7 @@
 
   var size = function () { return bot.offsetWidth || 44; };
 
-  var SELS = '.hero__id, h2, .area, .ledger__row, .study, .group-title, #skills-list dt, .letter > p:first-of-type, .contact__lede, .contact__title, .foot__name';
+  var SELS = '.hero__id, h2, .area, .ledger__row, .cert, .study, .group-title, #skills-list dt, .letter > p:first-of-type, .contact__lede, .contact__title, .foot__name';
   var P = [], cur = null, boxes = [];
 
   function collect() {
@@ -196,7 +196,7 @@
   }
 
   var lookRaf = 0, lx = 0, ly = 0;
-  function look(ev) {
+  function look(e) {
     var r = bot.getBoundingClientRect();
     if (!r.width) return;
     lx = Math.max(-1, Math.min(1, (e.clientX - (r.left + r.width / 2)) / 160)) * 2;

@@ -59,7 +59,7 @@
 
   /* A4 · inclinación al puntero (≤ 3 px, ≤ 0,6°) */
   if (!fine) return;
-  each(document.querySelectorAll('.area, .ledger__row, .study'), function (card) {
+  each(document.querySelectorAll('.area, .ledger__row, .cert, .study'), function (card) {
     var raf = 0, tx = 0, ty = 0, rot = 0;
     var draw = function () {
       raf = 0;

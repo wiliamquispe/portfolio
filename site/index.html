@@ -34,6 +34,7 @@
           <button class="menu-btn" type="button" data-menu-btn aria-expanded="false" aria-controls="navlinks"><span lang="es">Menú</span><span lang="en">Menu</span></button>
           <nav class="navlinks" id="navlinks" aria-label="Principal">
             <a href="#work"><span lang="es">Trabajo</span><span lang="en">Work</span></a>
+            <a href="#certs"><span lang="es">Certificaciones</span><span lang="en">Certifications</span></a>
             <a href="#studies"><span lang="es">Estudios</span><span lang="en">Studies</span></a>
             <a href="#about"><span lang="es">Sobre mí</span><span lang="en">About</span></a>
           </nav>
@@ -46,7 +47,7 @@
         <!-- ===== HERO ===== -->
         <header class="hero" id="inicio">
           <div class="hero__id">
-            <img class="avatar" src="img/perfil-avatar.jpg" width="96" height="96" alt="Retrato de Wiliam Quispe">
+            <picture><source type="image/webp" srcset="img/perfil-avatar.webp"><img class="avatar" src="img/perfil-avatar.jpg" width="144" height="144" alt="Retrato de Wiliam Quispe"></picture>
             <p class="stage__status"><span lang="es">Disponible para nuevas oportunidades</span><span lang="en">Open to new opportunities</span></p>
           </div>
           <h1 class="hero__title reveal">Wiliam Quispe, <span class="role" aria-label="AI &amp; Data Engineer"><span class="role__fx" aria-hidden="true">AI &amp; Data Engineer</span></span></h1>
@@ -67,15 +68,15 @@
             <article class="area reveal" style="--i:0">
               <h3 class="area__title"><span lang="es">Datos</span><span lang="en">Data</span></h3>
               <p>
-                <span lang="es">Pipelines ETL y ELT con SSIS, Python y SQL sobre SQL Server y Teradata; procesamiento distribuido con PySpark; integración por lotes con Azure Data Factory; Data Engineering Zoomcamp (Terraform, Docker, dbt).</span>
-                <span lang="en">ETL and ELT pipelines with SSIS, Python and SQL over SQL Server and Teradata; distributed processing with PySpark; batch integration with Azure Data Factory; Data Engineering Zoomcamp (Terraform, Docker, dbt).</span>
+                <span lang="es">Pipelines ETL y ELT con SSIS, Python y PySpark, SQL Server y Teradata; integración por lotes con Azure Data Factory y dbt.</span>
+                <span lang="en">ETL and ELT pipelines with SSIS, Python and PySpark, SQL Server and Teradata; batch integration with Azure Data Factory and dbt.</span>
               </p>
             </article>
             <article class="area reveal" style="--i:1">
               <h3 class="area__title"><span lang="es">Infraestructura</span><span lang="en">Infrastructure</span></h3>
               <p>
-                <span lang="es">Servidores Linux y contenedores Docker en entornos virtualizados, on-premise y en AWS EC2: servidores de bases de datos, VPN para conexiones internas, proxy para el tráfico y automatización en Bash y Python.</span>
-                <span lang="en">Linux servers and Docker containers, in virtualised environments, on-premise and on AWS EC2: database servers, VPNs for internal links, proxy servers for traffic, automation in Bash and Python.</span>
+                <span lang="es">Servidores Linux, Docker y Terraform; on-premise y en AWS EC2: servidores de bases de datos, VPN para conexiones internas, proxy para el tráfico y automatización en Bash y Python.</span>
+                <span lang="en">Linux servers, Docker and Terraform; on-premise and on AWS EC2: database servers, VPNs for internal links, proxy servers for traffic, automation in Bash and Python.</span>
               </p>
             </article>
             <article class="area reveal" style="--i:2">
@@ -88,8 +89,8 @@
             <article class="area reveal" style="--i:3">
               <h3 class="area__title"><span lang="es">IA</span><span lang="en">AI</span></h3>
               <p>
-                <span lang="es">Maestría en Inteligencia Artificial en la UNMSM, desde 2026. Machine learning y deep learning con TensorFlow, PyTorch, OpenCV y scikit-learn; cursos de minería de datos y algoritmos para big data.</span>
-                <span lang="en">Master’s in Artificial Intelligence at UNMSM, since 2026. Machine learning and deep learning with TensorFlow, PyTorch, OpenCV and scikit-learn; coursework in data mining and algorithms for big data.</span>
+                <span lang="es">Maestría en Inteligencia Artificial en la UNMSM, desde 2026. Machine learning y deep learning con TensorFlow, PyTorch, OpenCV y scikit-learn; orquestación de agentes de IA y cursos de algoritmos para big data.</span>
+                <span lang="en">Master’s in Artificial Intelligence at UNMSM, since 2026. Machine learning and deep learning with TensorFlow, PyTorch, OpenCV and scikit-learn; AI agent orchestration and coursework in algorithms for big data.</span>
               </p>
             </article>
           </div>
@@ -132,6 +133,73 @@
               </button>
             </article>
           </div>
+        </section>
+
+        <!-- ===== CERTIFICACIONES ===== -->
+        <section class="field field--sun" id="certs" aria-labelledby="certs-h">
+          <h2 id="certs-h" class="reveal"><span lang="es">Certificaciones</span><span lang="en">Certifications</span></h2>
+          <div class="certs">
+            <article class="cert reveal" style="--i:0">
+              <h3 class="cert__name"><span lang="es">Azure Data Fundamentals</span><span lang="en">Azure Data Fundamentals</span></h3>
+              <p class="cert__meta"><span lang="es">Microsoft · 2025</span><span lang="en">Microsoft · 2025</span></p>
+            </article>
+            <article class="cert reveal" style="--i:1">
+              <h3 class="cert__name"><span lang="es">Data Engineering Zoomcamp (Terraform, Docker, dbt)</span><span lang="en">Data Engineering Zoomcamp (Terraform, Docker, dbt)</span></h3>
+              <p class="cert__meta"><span lang="es">DataTalks.Club · 2025</span><span lang="en">DataTalks.Club · 2025</span></p>
+            </article>
+            <article class="cert reveal" style="--i:2">
+              <h3 class="cert__name"><a href="https://drive.google.com/file/d/1cZbsy4U_0KZ-SyTror_cFmEnp-2RZED_/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span lang="es">Python for ETL</span><span lang="en">Python for ETL</span></a></h3>
+              <p class="cert__meta"><span lang="es">Data Mining Consulting · 2023</span><span lang="en">Data Mining Consulting · 2023</span></p>
+            </article>
+            <article class="cert reveal" style="--i:3">
+              <h3 class="cert__name"><span lang="es">SQL Server Specialization</span><span lang="en">SQL Server Specialization</span></h3>
+              <p class="cert__meta"><span lang="es">WE Educación Ejecutiva</span><span lang="en">WE Educación Ejecutiva</span></p>
+            </article>
+            <article class="cert reveal" style="--i:4">
+              <h3 class="cert__name"><span lang="es">Google Cloud Fundamentals</span><span lang="en">Google Cloud Fundamentals</span></h3>
+              <p class="cert__meta"><span lang="es">Platzi</span><span lang="en">Platzi</span></p>
+            </article>
+            <article class="cert reveal" style="--i:5">
+              <h3 class="cert__name"><span lang="es">Google Cloud Skills Boost Path</span><span lang="en">Google Cloud Skills Boost Path</span></h3>
+              <p class="cert__meta"><span lang="es">Google Cloud</span><span lang="en">Google Cloud</span></p>
+            </article>
+          </div>
+        </section>
+
+        <!-- ===== ESTUDIOS ===== -->
+        <section class="field field--sky" id="studies" aria-labelledby="studies-h">
+          <h2 id="studies-h" class="reveal"><span lang="es">Estudios</span><span lang="en">Studies</span></h2>
+
+          <div class="studies">
+            <article class="study reveal" style="--i:1">
+              <h3 class="study__title"><span lang="es">Maestría en Inteligencia Artificial</span><span lang="en">Master’s in Artificial Intelligence</span></h3>
+              <p class="study__meta"><span lang="es">UNMSM · 2026-hoy</span><span lang="en">UNMSM · 2026-present</span></p>
+            </article>
+            <article class="study reveal" style="--i:2">
+              <h3 class="study__title"><span lang="es">Ingeniería de Sistemas (quinto superior)</span><span lang="en">Systems Engineering (top 20%)</span></h3>
+              <p class="study__meta"><span lang="es">UNMSM · 2019-2023</span><span lang="en">UNMSM · 2019-2023</span></p>
+            </article>
+            <article class="study reveal" style="--i:3">
+              <h3 class="study__title"><span lang="es">Ingeniería Informática, intercambio</span><span lang="en">Computer Engineering, exchange</span></h3>
+              <p class="study__meta"><span lang="es">Universidad de Guadalajara · 2022</span><span lang="en">Universidad de Guadalajara · 2022</span></p>
+            </article>
+          </div>
+
+          <h3 class="group-title reveal"><span lang="es">Idiomas</span><span lang="en">Languages</span></h3>
+          <p class="reveal"><span lang="es">Inglés avanzado</span><span lang="en">Advanced English</span></p>
+
+          <h3 class="group-title reveal"><span lang="es">Voluntariado</span><span lang="en">Volunteering</span></h3>
+          <p class="reveal"><span lang="es">IEEE CS UNMSM — Colaborador</span><span lang="en">IEEE CS UNMSM — Collaborator</span> <span class="muted nums">2021-2022</span></p>
+        </section>
+
+        <!-- ===== SOBRE MÍ ===== -->
+        <section class="letter" id="about" aria-labelledby="about-h">
+          <h2 class="sr-only" id="about-h"><span lang="es">Sobre mí</span><span lang="en">About</span></h2>
+          <p class="reveal" style="--i:1"><span lang="es">Soy ingeniero de sistemas por la Universidad Nacional Mayor de San Marcos y curso una maestría en inteligencia artificial.</span><span lang="en">I am a systems engineer from Universidad Nacional Mayor de San Marcos and I am studying a master's in artificial intelligence.</span></p>
+          <p class="reveal" style="--i:2"><span lang="es">Empecé con servidores y bases de datos: Linux, máquinas virtuales, VPN, replicación. Ahí aprendí que todo proyecto con uso de datos masivos necesita de una infraestructura adecuada (Cloud / OnPremise).</span><span lang="en">I started with servers and databases: Linux, virtual machines, VPNs, replication. That is where I learned that every project that uses massive data needs the right infrastructure (Cloud / On-Premise).</span></p>
+          <p class="reveal" style="--i:3"><span lang="es">Hoy construyo pipelines de datos y optimizo bases de datos en un banco, y avanzo hacia la adopción y desarrollo de herramientas de AI como eje de eficiencia y productividad.</span><span lang="en">Today I build data pipelines and optimise databases at a bank, and I am moving toward the adoption and development of AI tools as a driver of efficiency and productivity.</span></p>
+          <p class="reveal" style="--i:4"><span lang="es">Fuera del trabajo toco la guitarra y exploro videojuegos.</span><span lang="en">Outside work I play the guitar and explore video games.</span></p>
+          <p class="letter__sign reveal" style="--i:5">Wiliam Luis Quispe Ñaupa</p>
         </section>
 
         <!-- ===== HERRAMIENTAS (y «Compara», como extra) ===== -->
@@ -220,52 +288,6 @@
               <p class="small muted"><span lang="es">Es una comparación por palabras clave, no un modelo.</span><span lang="en">This is a keyword match, not a model.</span></p>
             </div>
           </details>
-        </section>
-
-        <!-- ===== ESTUDIOS ===== -->
-        <section class="field field--sky" id="studies" aria-labelledby="studies-h">
-          <h2 id="studies-h" class="reveal"><span lang="es">Estudios</span><span lang="en">Studies</span></h2>
-
-          <div class="studies">
-            <article class="study reveal" style="--i:1">
-              <h3 class="study__title"><span lang="es">Maestría en Inteligencia Artificial</span><span lang="en">Master’s in Artificial Intelligence</span></h3>
-              <p class="study__meta"><span lang="es">UNMSM · 2026-hoy</span><span lang="en">UNMSM · 2026-present</span></p>
-            </article>
-            <article class="study reveal" style="--i:2">
-              <h3 class="study__title"><span lang="es">Ingeniería de Sistemas (quinto superior)</span><span lang="en">Systems Engineering (top 20%)</span></h3>
-              <p class="study__meta"><span lang="es">UNMSM · 2019-2023</span><span lang="en">UNMSM · 2019-2023</span></p>
-            </article>
-            <article class="study reveal" style="--i:3">
-              <h3 class="study__title"><span lang="es">Ingeniería Informática, intercambio</span><span lang="en">Computer Engineering, exchange</span></h3>
-              <p class="study__meta"><span lang="es">Universidad de Guadalajara · 2022</span><span lang="en">Universidad de Guadalajara · 2022</span></p>
-            </article>
-          </div>
-
-          <h3 class="group-title reveal"><span lang="es">Certificaciones</span><span lang="en">Certifications</span></h3>
-          <ul class="chips chips--links reveal" style="--i:1">
-            <li><span lang="es">Data Engineering Zoomcamp (Terraform, Docker, dbt)</span><span lang="en">Data Engineering Zoomcamp (Terraform, Docker, dbt)</span> · <span class="muted"><span lang="es">DataTalks.Club — 2025</span><span lang="en">DataTalks.Club — 2025</span></span></li>
-            <li><span lang="es">Azure Data Fundamentals</span><span lang="en">Azure Data Fundamentals</span> · <span class="muted"><span lang="es">Microsoft — 2025</span><span lang="en">Microsoft — 2025</span></span></li>
-            <li><a href="https://drive.google.com/file/d/1cZbsy4U_0KZ-SyTror_cFmEnp-2RZED_/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span lang="es">Python for ETL</span><span lang="en">Python for ETL</span></a> · <span class="muted"><span lang="es">Data Mining Consulting — 2023</span><span lang="en">Data Mining Consulting — 2023</span></span></li>
-            <li><span lang="es">SQL Server Specialization</span><span lang="en">SQL Server Specialization</span> · <span class="muted"><span lang="es">WE Educación Ejecutiva</span><span lang="en">WE Educación Ejecutiva</span></span></li>
-            <li><span lang="es">Google Cloud Fundamentals</span><span lang="en">Google Cloud Fundamentals</span> · <span class="muted">Platzi</span></li>
-            <li><span lang="es">Google Cloud Skills Boost Path</span><span lang="en">Google Cloud Skills Boost Path</span> · <span class="muted">Google Cloud</span></li>
-          </ul>
-
-          <h3 class="group-title reveal"><span lang="es">Idiomas</span><span lang="en">Languages</span></h3>
-          <p class="reveal"><span lang="es">Inglés avanzado</span><span lang="en">Advanced English</span></p>
-
-          <h3 class="group-title reveal"><span lang="es">Voluntariado</span><span lang="en">Volunteering</span></h3>
-          <p class="reveal"><span lang="es">IEEE CS UNMSM — Colaborador</span><span lang="en">IEEE CS UNMSM — Collaborator</span> <span class="muted nums">2021-2022</span></p>
-        </section>
-
-        <!-- ===== SOBRE MÍ ===== -->
-        <section class="letter" id="about" aria-labelledby="about-h">
-          <h2 class="sr-only" id="about-h"><span lang="es">Sobre mí</span><span lang="en">About</span></h2>
-          <p class="reveal" style="--i:1"><span lang="es">Soy ingeniero de sistemas por la Universidad Nacional Mayor de San Marcos y curso una maestría en inteligencia artificial.</span><span lang="en">I am a systems engineer from Universidad Nacional Mayor de San Marcos and I am studying a master's in artificial intelligence.</span></p>
-          <p class="reveal" style="--i:2"><span lang="es">Empecé en servidores y bases de datos: Linux, máquinas virtuales, VPN, replicación. Ahí aprendí que un proyecto de datos es, sobre todo, la infraestructura que lo mantiene vivo.</span><span lang="en">I started in servers and databases: Linux, virtual machines, VPNs, replication. That is where I learned that a data project is mostly the infrastructure that keeps it alive.</span></p>
-          <p class="reveal" style="--i:3"><span lang="es">Hoy construyo pipelines de datos y optimizo bases de datos en un banco, y avanzo hacia el machine learning que corre encima.</span><span lang="en">Today I build data pipelines and optimise databases at a bank, and I am moving toward the machine learning that runs on top of them.</span></p>
-          <p class="reveal" style="--i:4"><span lang="es">Fuera del trabajo toco la guitarra y exploro videojuegos.</span><span lang="en">Outside work I play the guitar and explore video games.</span></p>
-          <p class="letter__sign reveal" style="--i:5">Wiliam Luis Quispe Ñaupa</p>
         </section>
 
         <!-- ===== CONTACTO ===== -->
